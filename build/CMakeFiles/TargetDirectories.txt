@@ -1,0 +1,3 @@
+/home/pi/Desktop/PID/build/CMakeFiles/rebuild_cache.dir
+/home/pi/Desktop/PID/build/CMakeFiles/edit_cache.dir
+/home/pi/Desktop/PID/build/CMakeFiles/pid_control.dir
