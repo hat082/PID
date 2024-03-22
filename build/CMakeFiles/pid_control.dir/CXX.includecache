@@ -6,10 +6,14 @@
 
 #IncludeRegexTransform: 
 
-/home/pi/Desktop/PID/main.cpp
+/home/pi/pi-sync/PID/main.cpp
+iostream
+-
 opencv2/opencv.hpp
 -
-iostream
+wiringPi.h
+-
+wiringSerial.h
 -
 
 /usr/local/include/opencv/cxcore.h
@@ -1233,4 +1237,8 @@ opencv2/core/cuda.hpp
 /usr/local/include/opencv2/xfeatures2d/nonfree.hpp
 opencv2/features2d.hpp
 /usr/local/include/opencv2/xfeatures2d/opencv2/features2d.hpp
+
+/usr/local/include/wiringPi.h
+
+/usr/local/include/wiringSerial.h
 

@@ -124,4 +124,6 @@ CMakeFiles/pid_control.dir/main.cpp.o: /usr/local/include/opencv2/videostab/wobb
 CMakeFiles/pid_control.dir/main.cpp.o: /usr/local/include/opencv2/xfeatures2d.hpp
 CMakeFiles/pid_control.dir/main.cpp.o: /usr/local/include/opencv2/xfeatures2d/cuda.hpp
 CMakeFiles/pid_control.dir/main.cpp.o: /usr/local/include/opencv2/xfeatures2d/nonfree.hpp
+CMakeFiles/pid_control.dir/main.cpp.o: /usr/local/include/wiringPi.h
+CMakeFiles/pid_control.dir/main.cpp.o: /usr/local/include/wiringSerial.h
 
