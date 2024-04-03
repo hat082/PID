@@ -3,7 +3,7 @@
 #include <wiringPi.h>
 #include <wiringSerial.h>
 
-#define MAX_SPEED 50 
+#define MAX_SPEED 80
 
 using namespace cv;
 using namespace std;
