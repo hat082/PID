@@ -120,14 +120,10 @@ int main() {
 
       delay(100);
 
-      sprintf(command, "#Barrrf %03d %03d %03d %03d",
-              (int)motors[0],  // right front
-              (int)motors[1],  // right back
-              (int)motors[2],  // left front
-              (int)motors[3]); // left back
-
+      sprintf(command, "#Barrrf 030 030 030 030");
       serialPrintf(robot, command);
 
+      printf("%s\n", command);
       delay(100);
       continue;
     }
@@ -146,51 +142,33 @@ int main() {
 
     // cout << "error: " << error << " offset: " << offset << endl;
 
-    int right = motors[0] - offset;
-    int left = motors[2] + offset;
+    // int right = motors[0] - offset;
+    // int left = motors[2] + offset;
+    if (abs(error) < 50) {
+      sprintf(command, "#Bafffr 030 030 030 030");
+    } else if (error < 0) {
+      sprintf(command, "#Bafffr 060 060 000 000");
+    } else if (error > 0) {
+      sprintf(command, "#Bafffr 000 000 060 060");
+    }
+
+    serialPrintf(robot, command);
+    printf("%s\n", command);
+
     
-      sprintf(command, "#Bafffr %03d %03d %03d %03d", 
-        clamp(right), // right front
-        clamp(right), // right back
-        clamp(left), // left front
-        clamp(left)); // left back
-      serialPrintf(robot, command);
-
-    // else if (left < 0 ) {
-    //   left *= -2;
-    //   sprintf(command, "#Baffrf %03d %03d %03d %03d", 
-    //     clamp(right), // right front
-    //     clamp(right), // right back
-    //     clamp(left), // left front
-    //     clamp(left)); // left back
-    //   serialPrintf(robot, command);
-    // }
-
-    // else {
-    //   sprintf(command, "#Bafffr %03d %03d %03d %03d", 
-    //     clamp(right), // right front
-    //     clamp(right), // right back
-    //     clamp(left), // left front
-    //     clamp(left)); // left back
-    // serialPrintf(robot, command);
-    // }
-
-
-    // sprintf(command, "#Bafffr %03d %03d %03d %03d", 
-    //     clamp(right), // right front
-    //     clamp(right), // right back
-    //     clamp(left), // left front
-    //     clamp(left)); // left back
-    // serialPrintf(robot, "#Bafffr 020 020 020 020");
-
-
+      // sprintf(command, "#Bafffr %03d %03d %03d %03d", 
+      //   clamp(right), // right front
+      //   clamp(right), // right back
+      //   clamp(left), // left front
+      //   clamp(left)); // left back
+      // serialPrintf(robot, command);
 
     // printf("robot: %d\terror:%d\toffset: %d\t%s\n", robot, error, offset, command);
 
-    // imshow("Camera Feed", result); // Display the captured frame
-    // if (waitKey(1) == 27) { // Press 'Esc' to exit
-    //   break;
-    // }
+    imshow("Camera Feed", result); // Display the captured frame
+    if (waitKey(1) == 27) { // Press 'Esc' to exit
+      break;
+    }
   }
 
   // cap.release();       // Release the camera
