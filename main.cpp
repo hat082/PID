@@ -7,6 +7,7 @@
 
 using namespace cv;
 using namespace std;
+
 int robot;
 int motors[4] = {30, 30, 30, 30};
 float kp, ki, kd;
@@ -147,8 +148,6 @@ int main() {
 
     int right = motors[0] - offset;
     int left = motors[2] + offset;
-
-
     
       sprintf(command, "#Bafffr %03d %03d %03d %03d", 
         clamp(right), // right front
